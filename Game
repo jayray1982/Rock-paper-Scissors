@@ -1,0 +1,101 @@
+function getUserChoice (userInput) {
+    userInput = userInput.toLowerCase();
+  
+
+    if (userInput == "rock") {
+        return userInput;
+    }
+    else if (userInput == "paper") {
+        return userInput;
+    }
+    else if (userInput == "scissors") {
+        return userInput;
+    }
+    else if (userInput == "bomb") {
+        return userInput;
+    }else {
+        console.log("Please type rock, paper, or scissors.")
+    }
+};
+
+//let userInput = "rock";
+//getUserInput(userInput);
+
+function getComputerChoice (){
+    let getCc = Math.floor(Math.random() * 3);
+
+    
+
+    if (getCc === 0) {
+        
+        return "rock";
+    }
+    else if (getCc == 1) {
+        
+        return "paper";
+    }
+    else {
+        
+        return "scissors";
+    }
+};
+
+//getComputerChoice();
+
+function determineWinner (userChoice, computerChoice) {
+    if (userChoice === computerChoice) {
+        
+        return "Its a tie.";
+    }
+
+    if (userChoice === "bomb") {
+        return "Bam! You won."
+    }
+
+    if (userChoice === "rock") {
+        if (computerChoice === "paper") {
+            
+            return "Oh no, the computer won this round."
+        }
+        else {
+            
+            return "Yes! You won!"
+        }
+    }
+
+    if (userChoice === "paper") {
+        if (computerChoice === "scissors") {
+            
+            return "Oh no, the computer won this round."
+        }
+        else {
+            
+            return "Yes! You won!"
+        }
+    }
+
+    if (userChoice === "scissors") {
+        if (computerChoice === "rock") {
+            
+            return "Oh no, the computer won this round.";
+        }
+        else {
+           
+            return "Yes! You won!"
+        }
+    }
+};
+
+//determineWinner("scissors", "paper");
+
+function playGame () {
+    var userChoice = getUserChoice('rock');
+    console.log(userChoice);
+
+    let computerChoice = getComputerChoice();
+    console.log(computerChoice);
+
+    console.log(determineWinner(userChoice, computerChoice) );
+};
+
+playGame();
